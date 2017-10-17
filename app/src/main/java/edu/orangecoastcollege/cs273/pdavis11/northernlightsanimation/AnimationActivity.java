@@ -45,15 +45,12 @@ public class AnimationActivity extends AppCompatActivity {
         // Hasn't been initialized yet
         if (rotateAnim == null) {
             rotateAnim = AnimationUtils.loadAnimation(this, R.anim.rotate_anim);
-            // Connect to the image view
+        // if it hasn't started or it has ended, then start it
+        if (!rotateAnim.hasStarted() | rotateAnim.hasEnded())
             lightsImageView.startAnimation(rotateAnim);
         }
-        else if (rotateAnim.hasStarted()){ // for not null anymore
-            lightsImageView.clearAnimation();
-            rotateAnim = null;
-        }
         else{
-            rotateAnim = null;
+            lightsImageView.clearAnimation();
         }
     }
 
