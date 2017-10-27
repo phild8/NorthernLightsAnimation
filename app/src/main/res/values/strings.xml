@@ -5,4 +5,5 @@
     <string name="shake_anim_button_text">Shake Animation</string>
     <string name="custom_anim_button_text">Custom Animation</string>
     <string name="lights_image_view_text">Northern Lights</string>
+    <string name="blink_anim">Blink Animation</string>
 </resources>

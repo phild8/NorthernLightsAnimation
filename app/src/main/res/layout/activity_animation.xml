@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_animation"
     android:layout_width="match_parent"
@@ -8,48 +7,61 @@
     android:orientation="vertical"
     tools:context="edu.orangecoastcollege.cs273.pdavis11.northernlightsanimation.AnimationActivity">
 
-
     <ImageView
         android:id="@+id/lightsImageView"
         android:layout_width="match_parent"
-        android:layout_height="277dp"
-        android:layout_margin="15dp"
+        android:layout_height="@dimen/image_height"
+        android:layout_margin="@dimen/margin_size"
         android:background="@drawable/lights1"
-        android:contentDescription="Northern Lights" />
+        android:contentDescription="@string/lights_image_view_text"/>
 
     <Button
         android:id="@+id/frameAnimButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginLeft="@dimen/margin_size"
+        android:layout_marginRight="@dimen/margin_size"
         android:onClick="toggleFrameAnim"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/frame_anim_button_text" />
 
     <Button
         android:id="@+id/rotateAnimButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginLeft="@dimen/margin_size"
+        android:layout_marginRight="@dimen/margin_size"
         android:onClick="toggleRotateAnim"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/rotate_anim_button_text" />
 
     <Button
         android:id="@+id/shakeAnimButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginLeft="@dimen/margin_size"
+        android:layout_marginRight="@dimen/margin_size"
         android:onClick="toggleShakeAnim"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/shake_anim_button_text" />
 
     <Button
         android:id="@+id/customAnimButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginLeft="@dimen/margin_size"
+        android:layout_marginRight="@dimen/margin_size"
         android:onClick="toggleCustomAnim"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/custom_anim_button_text" />
+
+    <Button
+        android:id="@+id/blinkAnimButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_size"
+        android:layout_marginRight="@dimen/margin_size"
+        android:onClick="toggleBlinkAnim"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/blink_anim"/>
 </LinearLayout>

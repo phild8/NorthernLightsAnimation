@@ -12,8 +12,13 @@
         android:startOffset="100"/>
 
     <translate android:fromXDelta="5%p"
-        android:toXDelta="5%p"
+        android:toXDelta="-5%p"
         android:duration="200"
         android:startOffset="300"/>
+
+    <translate android:fromXDelta="-5%p"
+       android:toXDelta="0"
+       android:duration="100"
+       android:startOffset="500"/>
 
 </set>

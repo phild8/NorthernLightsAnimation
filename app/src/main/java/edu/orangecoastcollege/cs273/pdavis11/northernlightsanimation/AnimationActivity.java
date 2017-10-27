@@ -8,6 +8,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+/**
+ * The controler - Loads the user interface and allows the user to select buttons that will start
+ * various animations, such as: shake, rotate, frame, and blink.
+ */
 public class AnimationActivity extends AppCompatActivity {
 
     // AnimationDrawable = used for frame animations
@@ -16,9 +20,14 @@ public class AnimationActivity extends AppCompatActivity {
     private Animation rotateAnim;
     private Animation shakeAnim;
     private Animation customAnim;
+    private Animation blinkAnim;
 
     private ImageView lightsImageView;
 
+    /**
+     * Loads the northern lights imagaview to the screen and sets the activity animation content.
+     * @param savedInstanceState Loads a saved preference if there is one.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +36,10 @@ public class AnimationActivity extends AppCompatActivity {
         lightsImageView = (ImageView) findViewById(R.id.lightsImageView);
     }
 
+    /**
+     * Loads different northern lights pictures that and cycles through them.
+     * @param view Button click that starts the frame animation.
+     */
     public void toggleFrameAnim(View view){
         // Hasn't been initialized yet
         if (frameAnim == null){
@@ -36,33 +49,57 @@ public class AnimationActivity extends AppCompatActivity {
         // if frameAnim is running, stop it
         if (frameAnim.isRunning())
             frameAnim.stop();
-        else
+        else // else start it
             frameAnim.start();
-        // else start it
     }
 
+    /**
+     * Rotates the animation in clockwise pattern 5 times, unless the user ends it.
+     * @param view The button click that starts or ends the rotation.
+     */
     public void toggleRotateAnim(View view){
         // Hasn't been initialized yet
-        if (rotateAnim == null) {
+        if (rotateAnim == null)
             rotateAnim = AnimationUtils.loadAnimation(this, R.anim.rotate_anim);
+
         // if it hasn't started or it has ended, then start it
         if (!rotateAnim.hasStarted() | rotateAnim.hasEnded())
             lightsImageView.startAnimation(rotateAnim);
-        }
         else{
             lightsImageView.clearAnimation();
         }
     }
 
+    /**
+     * Move the image to left offscreen and then to the right offscreen and then back to the center.
+     * @param view The button click that begins the movement.
+     */
     public void toggleShakeAnim(View view) {
         shakeAnim = AnimationUtils.loadAnimation(this, R.anim.shake_anim);
         lightsImageView.startAnimation(shakeAnim);
-
     }
 
+    /**
+     * Fades the picture in and out two separate times
+     * @param view The button click that begins the fading.
+     */
     public void toggleCustomAnim(View view){
-
+        customAnim = AnimationUtils.loadAnimation(this, R.anim.fade_anim);
+        lightsImageView.startAnimation(customAnim);
     }
 
+    /**
+     * Blinks the picture of the northern lights.
+     * @param view The button click that starts the blinking.
+     */
+    public void toggleBlinkAnim(View view){
+        if (blinkAnim == null)
+            blinkAnim = AnimationUtils.loadAnimation(this, R.anim.blink_anim);
+
+        if (!blinkAnim.hasStarted() | blinkAnim.hasEnded())
+            lightsImageView.startAnimation(blinkAnim);
+        else
+            lightsImageView.clearAnimation();
+    }
 
 }

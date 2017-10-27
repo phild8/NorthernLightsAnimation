@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margins in activity_animation -->
+    <dimen name="image_height">310dp</dimen>
+    <dimen name="margin_size">15dp</dimen>
+
+</resources>
